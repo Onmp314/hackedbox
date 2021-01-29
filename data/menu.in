@@ -1,0 +1,86 @@
+[begin] (ScrudgeWare)
+  [exec] (Run)          {@launcher@}
+  [exec] (@xterm@)      {@xterm@}
+  [exec] (Gkrellm)      {gkrellm}
+  [exec] (xScreenSaver) {xscreensaver-demo}
+
+  [nop] ()
+
+  [submenu] (Edit Config Files)
+    [exec] (menu) {@editor@ ~/.hackedbox/menu}
+    [exec] (rc)   {@editor@ ~/.hackedbox/rc}
+    [exec] (keys) {@editor@ ~/.hackedbox/keys}
+  [end]
+
+  [submenu] (Office Tools)
+    [exec] (AbiWord)     {abiword}
+    [exec] (Gnumeric)    {gnumeric}
+    [exec] (Text Editor) {@editor@}
+    [exec] (Samba)       {xfsamba}
+  [end]
+
+  [submenu] (Development)
+    [exec] (Anjuta)   {anjuta}
+    [exec] (BlueFish) {bluefish}
+  [end]
+ 
+  [submenu] (Remote Terms)
+    [exec] (FTP localhost) {@xterm@ -e ftp localhost}
+    [exec] (SSH Example)   {@xterm@ -e ssh localhost}
+  [end]
+
+  [submenu] (Multimedia)
+    [exec] (The GIMP)  {gimp}
+    [exec] (Xmms)      {xmms}
+    [exec] (Mixer)     {opmixer}
+    [exec] (CD Play)   {gcd}
+  [end]
+
+  [submenu] (Internet)
+    [exec] (Web Browser) {@browser@}
+    [exec] (Mail)        {sylpheed}
+    [exec] (ftp)         {guiftp}
+    [exec] (Gnutella)    {gtk-gnutella}
+  [end]
+
+  [submenu] (X Utilities)
+    [exec] (Xkill) {xkill}
+    [exec] (Xfontsel) {xfontsel}
+    [exec] (Xman)     {xman}
+    [exec] (Xcalc)    {xcalc}
+    [exec] (Xload)    {xload}
+  [end]
+ 
+  [submenu] (Styles) {Choose a style...}
+    [nop] ( *** Your HackedBox Styles *** )
+    [stylesdir] (~/.hackedbox/styles)
+    [nop] ( *** HackedBox Styles *** )
+    [stylesdir] (@prefix@/share/hackedbox/styles)
+    [nop] ( *** Blackbox Styles *** )
+    [stylesdir] (@prefix@/share/blackbox/styles)
+  [end]
+  
+  [submenu]   (Backgrounds)   {Choose a background...}
+	[exec]    (Refresh List) {make -f @prefix@/share/hackedbox/bgMenu.mk
+    [include] (~/.hackedbox/bgMenu)
+  [end]
+  
+  [workspaces] (Workspace List)
+  
+  [config] (Configuration)
+
+  [reconfig] (Reconfigure)
+  
+  [submenu] (Change WM?) {Change WM?}
+    [restart] (Hackedbox)
+    [restart] (blackbox) {blackbox}
+    [restart] (openbox)  {openbox} 
+    [restart] (fluxbox)  {fluxbox}
+    [restart] (Window Maker) {wmaker}
+    [restart] (Enlightenment) {enlightenment}
+    [restart] (KWM) {kwm}
+    [restart] (TWM) {twm}
+  [end]
+
+  [exit] (Exit)
+[end]

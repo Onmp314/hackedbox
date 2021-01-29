@@ -1,0 +1,5 @@
+#! /bin/sh
+
+aclocal \
+&& automake -i --gnu --add-missing \
+&& autoconf \
